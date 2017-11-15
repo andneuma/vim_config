@@ -1,6 +1,6 @@
 set nocompatible
 if has("autocmd")
-    filetype indent plugin on
+  filetype indent plugin on
 endif
 
 filetype off
@@ -10,11 +10,12 @@ call vundle#begin()
 " PLUGINS
 Plugin 'VundleVim/Vundle.vim'
 
-" CamelCaseMoving
-Plugin 'bkad/CamelCaseMotion'
+" Git
+Plugin 'airblade/vim-gitgutter'
 
-" Markdown support
-Plugin 'Markdown'
+" Airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Commenting
 Plugin 'tomtom/tcomment_vim'
@@ -49,13 +50,20 @@ Plugin 'auto-pairs'
 
 Plugin 'tmhedberg/matchit'
 
-" Multiple cursors
-Plugin 'vim-multiple-cursors'
-
 " Surround
 Plugin 'tpope/vim-surround'
 
+" ACK search
+Plugin 'mileszs/ack.vim'
+
+" ALE
+Plugin 'w0rp/ale'
+
+" Autoformat
+Plugin 'Chiel92/vim-autoformat'
+
 " Now we can turn our filetype functionality back on
+call vundle#end()
 filetype plugin indent on
 
 set cursorline
@@ -162,3 +170,23 @@ map <leader>q <c-w><c-q>
 
 " Set shortcut for vimrc editing
 map <leader>v :tabnew ~/.vimrc<CR>
+
+" Ack keybindings
+nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+nmap <leader>a :Ack<SPACE>"
+
+nmap <leader>b Obinding.pry<ESC>:w<CR>
+
+map <leader>e :e#<CR>
+
+" ALE
+let g:airline#extensions#ale#enabled = 1
+let g:ale_fixers = {
+      \   'javascript': ['eslint'],
+      \   'ruby': ['rubocop']
+      \}
+let g:ale_linters = {
+  \   'ruby': ['rubocop']
+  \}
+let g:ale_lint_on_txt_changed = 0
+" let g:ale_sign_column_always = 1
