@@ -99,7 +99,10 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " Colorscheme
 syntax enable
 set background=dark
-colorscheme quantum 
+" colorscheme quantum 
+" colorscheme ceudah
+colorscheme VisualStudioDark
+" colorscheme adventurous
 
 " cTags
 set tags=./tags
