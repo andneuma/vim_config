@@ -53,9 +53,6 @@ Plugin 'tmhedberg/matchit'
 " Surround
 Plugin 'tpope/vim-surround'
 
-" ACK search
-Plugin 'mileszs/ack.vim'
-
 " ALE
 Plugin 'w0rp/ale'
 
@@ -65,9 +62,6 @@ Plugin 'Chiel92/vim-autoformat'
 " Now we can turn our filetype functionality back on
 call vundle#end()
 filetype plugin indent on
-
-set cursorline
-set cursorcolumn
 
 " Menu style on file/directory tab completion
 set wildmode=longest,list,full
@@ -98,11 +92,7 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Colorscheme
 syntax enable
-set background=dark
-" colorscheme quantum 
-" colorscheme ceudah
-colorscheme VisualStudioDark
-" colorscheme adventurous
+colorscheme adventurous
 
 " cTags
 set tags=./tags
